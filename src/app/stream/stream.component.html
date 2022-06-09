@@ -1,0 +1,26 @@
+<div>
+    <select (change)="searchdata($event)">
+        <option>Course</option>
+            <option *ngFor="let data of subject['data'];" [value]="data.id">
+                {{data.name}}
+            </option>
+    </select>
+</div>
+<div>
+    <table class="table responsive">
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Text</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of subject['data'];">
+                <td>{{data.name}}</td>
+                <td ><input type="text" [(ngModel)]="course"></td>
+                <td><button class="btn btn-danger" (click)="update(data.id)">Update</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

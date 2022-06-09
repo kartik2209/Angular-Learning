@@ -1,0 +1,142 @@
+<!-- <app-sidebar>
+    
+</app-sidebar> -->
+<!-- {{show()}}
+<p> {{'hello'+' welcome'}} </p>
+<p> welcome {{firstname}}, {{lastname}} </p>
+<p> welcome {{getFirstname()}} {{getLastname()}} </p>
+<p>1.5*30={{1.5*30}}</p>
+<p>largest{{max(10,2)}}</p>
+    <img [src]="imageurl" style="height: 50px;">
+    <div>
+        <div *ngFor="let data of me">
+            {{data.No}} {{data.Name.name1}} {{data.Name.name2}}
+        </div>
+    </div>
+    <p [style.color]="color">1</p>
+    <p on-click="click()">-</p>
+    <p (click)="clickme()">+</p>
+    <p>you have clicked {{clickcount}}</p>
+    <input (input)="name($event)">
+    {{value}}<br>
+    <input #el (input)="mane(el)">
+    <p>{{vale}}</p>
+    <input [(ngModel)]="fname">
+    <p>{{fname}}</p>
+    <button (click)="delete()">clear</button><br>
+    <progress value="50" max="100"></progress><br>
+    <input type="text" name="name1" (change)="namechanged($event)">
+    <select name="country1" (change)="check($event)">
+        <option value="null" disabled>Select Country</option>
+        <option value="county.id" *ngFor="let data of countries">{{data.name}}</option>
+    </select><br>
+    <input type="checkbox" (click)="check($event)" >show
+    <div *ngIf="display">
+        Display checked 
+    </div>
+    <div *ngIf="!display">
+        Display unchecked 
+    </div>
+    <div *ngFor="let data of user; let i=index;">
+        <div *ngIf="i == currenttext">
+       {{i+1}} {{data.text}}</div>
+    </div>
+<button (click)="pre()">pre</button>
+<button (click)="next()">next</button>
+<div class="main">
+<thead class="thead">
+    <tr>
+        <th>Title</th>
+        <th>Name</th>
+        <th>Middle_Name</th>
+        <th>Surname</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let data of users; let i =index;let first =first;let last =last;let o=odd;let e=even;" [class]="{first:first, last:last,odd:o,even:e}">
+        <td>{{i+1}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.midname}}</td>
+        <td>{{data.surname}}</td>
+    </tr>
+</tbody>
+</div> -->
+<div [formGroup]="form"> 
+    <div class="Fname">
+    <input type="text" formControlName="FirstName" placeholder="FirstName"><br>
+    <div *ngIf="form.controls['FirstName'].value=='' && submited" ><small >Enter valid First Name</small></div>
+</div><br>
+<div class="lname">
+    <input type="text" formControlName="LastName" placeholder="LastName"  ><br>
+    <div *ngIf="form.controls['LastName'].value=='' && submited"><small>Enter valid Last Name</small></div>
+</div><br>
+<div class="email">
+    <input type="email" formControlName="Email" placeholder="Email"><br>
+    <div *ngIf="form.controls['Email'].value=='' && submited"><small>Enter valid Email</small></div>
+</div><br>
+<div class="num">
+    <input type="number" formControlName="Phone_No" placeholder="Mobile Number"><br>
+    <div *ngIf="form.controls['Phone_No'].value=='' && submited"><small>Enter valid Mobile Number</small></div>
+</div><br>
+<div class="condition">
+    <input type="checkbox" formControlName="Conditon">T&C<br>
+    <div *ngIf="form.controls['Conditon'].value=='' && submited"><small>Accept Terms & Conditions</small></div>
+</div><br>
+    <button (click)="Save()" [disabled]="!form.valid" class="btn btn-primary">Save</button>
+</div>
+<!-- <div *ngFor="let object of array;let i = index" >
+    <div *ngIf="i == current">
+        <img [src]="object.images" alt="" style="width: 50px;">
+     {{i+1}} {{object.values}} 
+    </div>
+</div>
+<div>
+    <button (click)="pres()"></button>
+    <button (click)="nexts()"></button>
+</div>
+<div>
+    <input type="text" [(ngModel)]="text" >
+    <button (click)="add()"  >Add</button>
+    <div *ngFor="let data of texts;let i = index;"><span *ngIf="i==0"> Updated data</span> {{data.names}}</div>
+</div> -->
+    <!-- <div class="main-card">
+    <div class="card1">
+        <div class="image">
+       <img src="assets\studies.gif" alt="" style="width: 100%;height: 500px;">
+    </div>
+</div>
+    <div class="card2">
+        <img src="assets\offee.png" alt="logo" style="width:100px; height: 80px;"><br>
+        <input type="text" [(ngModel)]="uname" placeholder="Username" id="uname"><br>
+        <input type="password" [(ngModel)]="pwd" placeholder="Password" id="pwd"><br>
+        <input type="number" [(ngModel)]="clg" placeholder="College code" id="clg"><br>
+        <button type="submit" class="btn btn-primary btn-block" (click)="submit()" id="btn">Login</button>
+    </div> -->
+<!-- </div> 
+ <div class="main">
+<div class="number">
+    <div class="number-card">
+        <button type="button" class="num" *ngFor="let data of index ;let i = index;">
+        {{i+1}}
+        </button> 
+    </div>
+</div>
+</div> -->
+<!-- <app-footer></app-footer>  -->
+<!-- <div class="img-container">
+    <input id="rt90" type="radio" name="rotate" />
+    <input id="rt180" type="radio" name="rotate" />
+    <input id="rt270" type="radio" name="rotate" />
+    <input id="nrml" type="radio" name="rotate" />
+    <div class="btn-board"> 
+      <label class="rt-btn" for="rt90">
+  Rotate 90° </label> 
+      <label class="rt-btn" for="rt180">
+  Rotate 180°</label>
+      <label class="rt-btn" for="rt270">
+  Rotate 270°</label>
+      <label class="rt-btn" for="nrml">
+  Normal </label>
+    </div> 
+  <img class="target" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" style="width: 400px;">
+  </div> -->

@@ -1,0 +1,46 @@
+<!-- <div class="table responsive">
+<table class="table table-bordered ">
+    <thead class="thead-dark">
+        <tr>
+            <th>SR No</th>
+            <th>Subject Name</th>
+            <th>Date&Time</th>
+            <th>Operation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of user['data'];let i = index">
+            <td>{{i+1}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.created_at}}</td>
+            <td><button class="btn btn-primary" (click)="delete(data)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="getsubjectdata()">Show</button>
+</div> -->
+<div [formGroup]="form">
+<div>
+    <input type="text" formControlName="username" placeholder="User Name">
+    <div *ngIf="form.controls['username'].value=='' && submited">Enter Valid User Name</div>
+</div>
+<div>
+    <input type="text" formControlName="lastname" placeholder="Last Name">
+    <div *ngIf="form.controls['lastname'].value=='' && submited">Enter Valid Last Name</div>
+</div>
+<div>
+    <input type="text" formControlName="email" placeholder="Email">
+    <div *ngIf="form.controls['email'].value=='' && submited">Enter Valid Email</div>
+</div>
+<div>
+    <input type="number" formControlName="number" placeholder="Phone Number ">
+    <div *ngIf="form.controls['number'].value=='' && submited">Enter Valid Phone Number</div>
+</div>
+<div>
+    <input type="checkbox" formControlName="checkbox" placeholder="T&C">
+    <div *ngIf="form.controls['checkbox'].value=='' && submited">Accept all Terms and Condition</div>
+</div>
+<div>
+    <button type="button" class="btn btn-primary" (click)="savedata()">Login</button>
+</div>
+</div>

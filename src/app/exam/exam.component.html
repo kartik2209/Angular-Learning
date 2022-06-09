@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand" style="background-color: lightgrey; height: 40px;"></nav>
+<div class="main-card">
+    <div *ngFor="let data of question;let i = index">
+        <div *ngIf="i == currentimage">
+    <div class="card1" >
+        <div class="question" >
+<label>Q{{i+1}}:-{{data.que}}</label>
+<div class="markquestion" >
+<label>Marks:-{{data.mark}}</label>
+</div>
+</div>
+<div class="typeanswer">
+<label>Answer:-<br>
+<textarea class="tans" style=" height: 60px; width: 1050px; resize: none; overflow-y: scroll;"></textarea>
+</label>
+</div>
+<div class="image" style="overflow:scroll;" *ngIf="data.img">
+    <div class="rotate" style="display:flex ; justify-content:end; gap: 5px;">
+        <img src="assets\arrow-left-solid.svg" alt=""   (click)="rotated90()"   style="width: 40px;">
+        <img src="assets\arrow-up-solid.svg"   alt=""   (click)="rotated180()"  style="width: 40px;">
+        <img src="assets\arrow-right-solid.svg"alt=""   (click)="rotated270()"  style="width: 40px;">
+        <img src="assets\arrow-down-solid.svg" alt=""   (click)="rotated360()"  style="width: 40px;">
+      
+    </div> 
+    <img [src]= "data.img" [@rotated90]="isrotated90" [@rotated180]="isrotated180" [@rotated270]="isrotated270" [@rotated360]="isrotated360" class="imga"  alt=""  style=" width: 100%; padding: 40px; background-size: cover; ">
+<!-- [style.transform]="'scale('+scale+')'" -->
+<div class="next">
+    <img src="assets\arrow-left-solid.svg" alt="pre" (click)="pre()" >
+    <!-- <div class="zoom">
+        <img src="assets\ZoomOut.svg" alt="Out" (click)="scale=scale-.1">
+        <img src="assets\ZoomIn.svg" alt="In" (click)="scale=scale+.1">
+    </div> -->
+    <img src="assets\arrow-right-solid.svg" alt="next" (click)="next()">
+</div>
+</div>
+<div class="upload">
+    <div class="btn btn-primary">Upload</div>
+</div>
+</div>
+</div>
+</div>
+    <div class="card2">
+<div class="number">
+    <div class="button" (click)="show()">
+    <button type="button" class="num" *ngFor="let data of question;let i = index" (click)="currentimage = i"  >
+        {{i+1}}
+    </button>
+    </div>
+</div>
+<div class="save">
+    <div class="btn btn-primary">Save</div>
+</div>
+    </div>
+</div>
+<!-- <app-footer></app-footer> -->

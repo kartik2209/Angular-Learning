@@ -1,0 +1,32 @@
+.footer{
+    background-color: #ccc;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+}
+.green
+{
+    background-color: green;
+    color: white;
+}
+.main-card
+{
+    display: flex;
+}
+.card1
+{
+    width: 100%;
+    background-color: lightblue;
+}
+.card2
+{
+    width: 100%;
+    background-color: yellow;
+}
+@media screen and (max-width:992px) {
+    .main-card
+    {
+        display: grid;
+    }
+}

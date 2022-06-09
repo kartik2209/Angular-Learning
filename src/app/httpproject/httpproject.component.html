@@ -1,0 +1,44 @@
+<div [formGroup]="form"> 
+    <div class="Fname">
+    <input type="text" formControlName="FirstName" placeholder="FirstName"><br>
+    <div *ngIf="form.controls['FirstName'].value=='' && submited" ><small >Enter valid First Name</small></div>
+</div><br>
+<div class="lname">
+    <input type="text" formControlName="LastName" placeholder="LastName"  ><br>
+    <div *ngIf="form.controls['LastName'].value=='' && submited"><small>Enter valid Last Name</small></div>
+</div><br>
+<div class="email">
+    <input type="email" formControlName="Email" placeholder="Email"><br>
+    <div *ngIf="form.controls['Email'].value=='' && submited"><small>Enter valid Email</small></div>
+</div><br>
+<div class="num">
+    <input type="number" formControlName="Phone_No" placeholder="Mobile Number"><br>
+    <div *ngIf="form.controls['Phone_No'].value=='' && submited"><small>Enter valid Mobile Number</small></div>
+</div><br>
+<div class="condition">
+    <input type="checkbox" formControlName="Conditon">T&C<br>
+    <div *ngIf="form.controls['Conditon'].value=='' && submited"><small>Accept Terms & Conditions</small></div>
+</div><br>
+    <button (click)="Save()" [disabled]="!form.valid" class="btn btn-primary">Save</button>
+</div>
+<div style="display: flex;">
+<div>
+    <select name="ID" id="">
+    <option value="">ID</option>
+    <option *ngFor="let data of id['data']">{{data.id}}</option>
+</select>
+</div>
+<div>
+    <select name="" id="">
+    <option value="">Name</option>
+    <option *ngFor="let data of id['data']">{{data.name}}</option>
+</select>
+</div>
+<div>
+    <select name="" id="">
+    <option value="">Date&Time</option>
+    <option *ngFor="let data of id['data']">{{data.created_at}}</option>
+</select>
+</div>
+<!-- {{id | json}} -->
+</div>

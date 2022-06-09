@@ -1,0 +1,31 @@
+.flex-container{
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 10px 40px -10px #000000b3;
+    margin-top: 150px;
+    margin-right: 355px;
+    margin-left: 355px;
+    border-radius: 10px;
+}
+.card2{
+    margin-top: 100px;
+}
+.pwd{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid lightgray;
+}
+.clgcode{
+    margin-bottom: 10px;
+}
+.adminlogin{
+    color: #8a2be2;
+    font-size: 24px;
+    font-weight: 700;
+}
+.btn{
+    border-radius: 20px;
+    background:#8a2be2;
+    color: white;
+    border-radius: 20px;
+}
