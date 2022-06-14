@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-stream',
@@ -7,39 +8,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stream.component.scss']
 })
 export class StreamComponent implements OnInit {
-  subject:any=[]
-  index:any=[]
-  course=''
-  constructor(public http:HttpClient) { }
+form!:FormGroup
+subject:any=[]
+  constructor(public http:HttpClient,public fb:FormBuilder) { }
 
   ngOnInit(): void {
-    this.coursedata()
+    this.form=this.fb.group(
+      {
+      name:new FormControl('',Validators.required),
+      id:new FormControl('',Validators.required)
+    })
+    this.getdata()
   }
-  
-public coursedata(){
-  this.http.get('https://developmentapi.offee.in/streams').subscribe((res:any)=>{
-console.log(res);
-this.subject=res
-  })
-}
-searchdata(event:any){
-if (event.target.value==0) {
-
-}
-else {
-  this.http.get('https://developmentapi.offee.in/streams/'+ event.target.value).subscribe((res:any)=>{
+  getdata(){
+    this.http.get('https://developmentapi.offee.in/streams').subscribe((res:any)=>
+    {
     console.log(res);
+    this.subject=res
+    })
+  }
+  searchdata(event:any)
+  {
+    this.http.get('https://developmentapi.offee.in/streams/' + event.target.value).subscribe((res:any)=>{
+    console.log(res);
+    this.form.patchValue(res['data'][0])
   })
-}
-}
-public update(id:any){
-console.log(id);
-let body={
-  id:id,
-  name:this.course
-}
-this.http.post('https://developmentapi.offee.in/streams/add',body).subscribe((res:any)=>{
-  console.log(res);
-})
+  }
+  update(){
+    // this.form
+  //  let body = this.form.value
+  console.log(this.form);
+console.log(this.form.value);
 }
 }

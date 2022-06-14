@@ -10,8 +10,6 @@ export class FormarrayComponent implements OnInit {
   form!:FormGroup
   data!:FormArray
   index:any=[]
-  // text='hello <b>welcome</b> '
-  // image='<img src="assets/offee.png">'
   constructor(public fb:FormBuilder) { 
     // for(let i=0; i < 10;i++)
     // this.index.push(i)
@@ -21,7 +19,7 @@ export class FormarrayComponent implements OnInit {
   ngOnInit(): void {
     this.form=this.fb.group({
      Username:new FormControl('',Validators.required),
-     data:new FormArray([this.anotherform()])
+     data:new FormArray([])
     })
   }
   anotherform():FormGroup{
@@ -41,5 +39,8 @@ export class FormarrayComponent implements OnInit {
   submit(){
     console.log(this.form.value);
     
+  }
+  remove(i:number){
+this.data.removeAt(i);
   }
 }

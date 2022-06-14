@@ -28,15 +28,17 @@ public login(){
   formdata.append('fromportal','adminkjsc');
   this.http.post('https://development.offee.in/services/interfaces/AdminLoginController.php',formdata).subscribe((res:any)=>{
     console.log(res);
-    if (res['status']===-5) {
+    if (res['status'] == -5) 
+    {
       alert('Enter Valid Details')
-      return 
+    //  return 
     } 
-    else {
+    else 
+    {
       console.log(res);
       alert('Success')
-    this.router.navigate(['/Stream'])
-      }
+      this.router.navigate(['/Stream'])
+    }
   })
   }
 }

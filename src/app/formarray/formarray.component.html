@@ -1,20 +1,16 @@
+<app-sidebar></app-sidebar>
 <div [formGroup]="form">
-<input type="text" formControlName="Username" placeholder="name">
+<input type="text" formControlName="Username" placeholder="User Name">
 <div formArrayName="data" *ngFor="let element of anotherformcontrol();let i =index;">
 <div [formGroupName]="i">
 <input type="text" formControlName="phone_no" placeholder="Phone Number">
+<button (click)="remove(i)">Remove</button>
 </div>
 </div>
 <button (click)="addmore()">Add</button>
 <button (click)="submit()">Submit</button>
 </div>
-<!-- <button *ngFor="let data of index;let i= index">
+<app-footer></app-footer>
+<!--  <button *ngFor="let data of index;let i= index">
     {{i+1}}
-</button>
-<P [innerHTML]="text"></P> -->
-<!-- <P [innerHTML]="image"></P> -->
-
-<!-- <div>
-    <img src="assets\studies.gif" alt="">
-</div>
-<button>90</button> -->
+</button> -->
