@@ -18,13 +18,15 @@ export class FormarrayComponent implements OnInit {
   }
   ngOnInit(): void {
     this.form=this.fb.group({
-     Username:new FormControl('',Validators.required),
+     username:new FormControl('',Validators.required),
+     lastname:new FormControl('',Validators.required),
      data:new FormArray([])
     })
   }
   anotherform():FormGroup{
     return this.fb.group({
       phone_no:new FormControl('',Validators.required),
+     email:new FormControl('',Validators.required),
     })
   }
   anotherformcontrol(){
@@ -41,6 +43,8 @@ export class FormarrayComponent implements OnInit {
     
   }
   remove(i:number){
+    this.data = this.form.get('data') as FormArray
+     console.log(this.data.at(i).value);
 this.data.removeAt(i);
-  }
+}
 }
