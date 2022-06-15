@@ -9,10 +9,11 @@ import { PostComponent } from './post/post.component';
 import { GetComponent } from './get/get.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { StreamComponent } from './stream/stream.component';
+import { DesignComponent } from './design/design.component';
 
 const routes: Routes = [
   {
-path:'',redirectTo:'Httpproject',pathMatch:'full'
+path:'',redirectTo:'Design',pathMatch:'full'
 },
   {path:'Login',component:LoginComponent},
   {path:'Exam',component:ExamComponent},
@@ -23,6 +24,7 @@ path:'',redirectTo:'Httpproject',pathMatch:'full'
   {path:'Get',component:GetComponent},
   {path:'Adminlogin',component: AdminloginComponent},
   {path:'Stream',component: StreamComponent},
+  {path:'Design',component: DesignComponent},
 
 
 ];

@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDialogModule} from '@angular/material/dialog';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExamComponent } from './exam/exam.component';
@@ -20,6 +21,7 @@ import { PostComponent } from './post/post.component';
 import { GetComponent } from './get/get.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { StreamComponent } from './stream/stream.component';
+import { DesignComponent } from './design/design.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ import { StreamComponent } from './stream/stream.component';
     PostComponent,
     GetComponent,
     AdminloginComponent,
-    StreamComponent
+    StreamComponent,
+    DesignComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { StreamComponent } from './stream/stream.component';
     BrowserAnimationsModule,
     MatCardModule,
     MatSidenavModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -36,8 +36,8 @@ public login(){
     else 
     {
       console.log(res);
-      alert('Success')
-      this.router.navigate(['/Stream'])
+      // alert('Success')
+      this.router.navigate(['/Formarray'])
     }
   })
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
-
+import {MatDialog} from '@angular/material/dialog';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-formarray',
   templateUrl: './formarray.component.html',
@@ -10,17 +11,13 @@ export class FormarrayComponent implements OnInit {
   form!:FormGroup
   data!:FormArray
   index:any=[]
-  constructor(public fb:FormBuilder) { 
-    // for(let i=0; i < 10;i++)
-    // this.index.push(i)
-    // console.log(this.index);
-    
+  constructor(public fb:FormBuilder,public dialog:MatDialog,public router:Router) { 
   }
   ngOnInit(): void {
     this.form=this.fb.group({
      username:new FormControl('',Validators.required),
      lastname:new FormControl('',Validators.required),
-     data:new FormArray([])
+     data:new FormArray([this.anotherform()])
     })
   }
   anotherform():FormGroup{
@@ -40,6 +37,7 @@ export class FormarrayComponent implements OnInit {
   }
   submit(){
     console.log(this.form.value);
+this.router.navigate(['/Stream'])
     
   }
   remove(i:number){
@@ -47,4 +45,5 @@ export class FormarrayComponent implements OnInit {
      console.log(this.data.at(i).value);
 this.data.removeAt(i);
 }
+
 }
