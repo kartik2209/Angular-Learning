@@ -1,0 +1,42 @@
+<!-- <div>
+    <div class="navbar">
+        <nav class="navbar navbar-expand" >
+            <img src="assets\Menu.svg" style="width: 20px;" (click)="open()">
+        </nav>
+    </div>
+    <div [class]="sidebar? 'sidebar sidebar-active' : 'sidebar'">
+    </div>
+</div> -->
+<div class="container">
+      <div class="card1">
+        <div [formGroup]="form">
+            <button (click)="addchapter()">+ Add Chapter</button>
+        <div formArrayName="chapterarray" *ngFor="let data of chapterformcontrol(); let i = index;">
+            <div [formGroupName]="i">
+            <input type="text" formControlName="chapter" placeholder="Chapter"> 
+            <button (click)="addtopic(i)">+ Add Topic</button>
+            <button (click)="deletechapter(i)"><img src="assets\Delete.svg" style="width: 10px;"></button>
+            </div>
+        <div formArrayName="topicarray" *ngFor="let  data of anotherformcontrol(i); let j = index;">
+            <div [formGroupName]="j">
+                <div class="topic">
+             <input type="text" formControlName="topic" placeholder="Topic">
+             <button (click)="addsubtopic(i,j)">+ Add Sub Topic</button>
+             <button (click)="deletetopic(i,j)"><img src="assets\Delete.svg" style="width: 10px;"></button>
+            </div>
+        <div formArrayName="subtopicarray" *ngFor="let data of anotherformcontrols(i,j); let k = index;">
+            <div [formGroupName]="k">
+            <div class="subtopic">
+             <input type="text" formControlName="sub_topic" placeholder="Sub Topic">
+             <button (click)="deletesubtopic(i,j,k)"><img src="assets\Delete.svg" style="width: 10px;"></button>
+            </div>
+            </div>
+        </div>    
+        </div> 
+</div>
+</div>
+</div>
+      </div>
+      <div class="card2">
+      </div> 
+</div>
