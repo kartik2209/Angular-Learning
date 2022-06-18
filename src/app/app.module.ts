@@ -23,6 +23,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { StreamComponent } from './stream/stream.component';
 import { DesignComponent } from './design/design.component';
 import { ArrayinarrayComponent } from './arrayinarray/arrayinarray.component';
+import { CardincreaseComponent } from './cardincrease/cardincrease.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { ArrayinarrayComponent } from './arrayinarray/arrayinarray.component';
     AdminloginComponent,
     StreamComponent,
     DesignComponent,
-    ArrayinarrayComponent
+    ArrayinarrayComponent,
+    CardincreaseComponent
   ],
   imports: [
     BrowserModule,
