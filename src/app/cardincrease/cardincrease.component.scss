@@ -1,0 +1,12 @@
+.maincard{
+   display: flex;
+   justify-content: center;
+}
+
+.card{
+    margin: 50px;
+    height: 200px;
+    width: 200px;
+    box-shadow: inset 0 0 10px 2px;
+    background-position-x: left top;
+}

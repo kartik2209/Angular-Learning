@@ -22,6 +22,8 @@ import { GetComponent } from './get/get.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { StreamComponent } from './stream/stream.component';
 import { DesignComponent } from './design/design.component';
+import { ArrayinarrayComponent } from './arrayinarray/arrayinarray.component';
+import { CardincreaseComponent } from './cardincrease/cardincrease.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +38,9 @@ import { DesignComponent } from './design/design.component';
     GetComponent,
     AdminloginComponent,
     StreamComponent,
-    DesignComponent
+    DesignComponent,
+    ArrayinarrayComponent,
+    CardincreaseComponent
   ],
   imports: [
     BrowserModule,

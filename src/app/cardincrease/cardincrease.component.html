@@ -1,0 +1,49 @@
+<!-- <div class="maincard">
+    <div class="card" [style.Width]="maxWFromRight + 'px'" [style.Height]="maxHFromRight + 'px'">
+         <img src="assets\studies.gif">
+    </div>
+</div>
+<input type="text" [(ngModel)]="maxWFromRight"> maxWFromRight
+<input type="text" [(ngModel)]="maxHFromRight"> maxHFromRight<br> -->
+<div class="container mt-5">
+    <h2>Posts</h2>
+    <table class="table">
+      <thead class="thead-dark">
+          <tr>
+            <th>Id</th>
+            <th>name</th>
+            <th>description</th>
+            <th>price</th>
+            <th>Url</th>
+            <th>quantity</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of Object">
+          <th scope="row">{{ data.id }}</th>
+          <td>{{ data.name }}</td>
+          <td>{{ data.description }}</td>
+          <td>{{ data.price }}</td>
+          <td><a href="#">{{data.imageUrl}}</a></td>
+          <td>{{ data.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+<!-- <div class="card2">
+    <div class="adminlogin">
+      <label><b><h4>ADMIN LOGIN</h4></b></label>
+    </div>
+    <div class="uname">
+        <input type="text" placeholder="User Name" [(ngModel)]="username">
+    </div>
+    <div class="pwd">
+        <input type="password" placeholder="Password" [(ngModel)]="password">
+    </div>
+    <div class="clgcode">
+        <input type="number" placeholder="College Code" [(ngModel)]="college_code">
+    </div>
+    <div class="login">
+        <button type="button" class="btn btn-block" (click)="login()">Login</button>
+    </div>
+</div> -->
