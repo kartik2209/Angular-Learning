@@ -24,6 +24,7 @@
              <button (click)="addsubtopic(i,j)">+ Add Sub Topic</button>
              <button (click)="deletetopic(i,j)"><img src="assets\Delete.svg" style="width: 10px;"></button>
             </div>
+        </div> 
         <div formArrayName="subtopicarray" *ngFor="let data of anotherformcontrols(i,j); let k = index;">
             <div [formGroupName]="k">
             <div class="subtopic">
@@ -32,8 +33,6 @@
             </div>
             </div>
         </div>    
-        </div> 
-</div>
 </div>
 </div>
       </div>
