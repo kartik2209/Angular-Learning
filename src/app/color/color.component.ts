@@ -24,7 +24,7 @@ export class ColorComponent implements OnInit {
       }
  })
   }
-
+  
   getStreamdata(){
     this.http.get('https://developmentapi.offee.in/streams').subscribe((res:any)=>{
     console.log(res);

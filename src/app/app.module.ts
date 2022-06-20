@@ -24,6 +24,7 @@ import { StreamComponent } from './stream/stream.component';
 import { DesignComponent } from './design/design.component';
 import { ArrayinarrayComponent } from './arrayinarray/arrayinarray.component';
 import { CardincreaseComponent } from './cardincrease/cardincrease.component';
+import { SchoollistComponent } from './schoollist/schoollist.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { CardincreaseComponent } from './cardincrease/cardincrease.component';
     StreamComponent,
     DesignComponent,
     ArrayinarrayComponent,
-    CardincreaseComponent
+    CardincreaseComponent,
+    SchoollistComponent
   ],
   imports: [
     BrowserModule,

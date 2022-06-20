@@ -10,27 +10,21 @@
     <table class="table">
       <thead class="thead-dark">
           <tr>
-            <th>Id</th>
-            <th>name</th>
-            <th>description</th>
-            <th>price</th>
-            <th>Url</th>
-            <th>quantity</th>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>College Code</th>
           </tr>
       </thead>
       <tbody>
         <tr *ngFor="let data of Object">
-          <th scope="row">{{ data.id }}</th>
-          <td>{{ data.name }}</td>
-          <td>{{ data.description }}</td>
-          <td>{{ data.price }}</td>
-          <td><a href="#">{{data.imageUrl}}</a></td>
-          <td>{{ data.quantity }}</td>
+          <th scope="row">{{ data.username }}</th>
+          <td>{{ data.password }}</td>
+          <td>{{ data.college_code }}</td>
         </tr>
       </tbody>
     </table>
 </div>
-<!-- <div class="card2">
+<div class="card2">
     <div class="adminlogin">
       <label><b><h4>ADMIN LOGIN</h4></b></label>
     </div>
@@ -44,6 +38,6 @@
         <input type="number" placeholder="College Code" [(ngModel)]="college_code">
     </div>
     <div class="login">
-        <button type="button" class="btn btn-block" (click)="login()">Login</button>
+        <button type="button" class="btn btn-primary" (click)="login()">Login</button>
     </div>
-</div> -->
+</div>

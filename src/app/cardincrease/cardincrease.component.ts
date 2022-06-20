@@ -11,6 +11,9 @@ export class CardincreaseComponent implements OnInit {
  maxWFromleft:any
  maxWFromRight:any
  Object:any=[]
+ username=''
+ password=''
+ college_code=''
   constructor(public http:HttpClient) { }
 
   ngOnInit(): void {
@@ -18,5 +21,20 @@ export class CardincreaseComponent implements OnInit {
     console.log(data);
     this.Object = data
   })
+ 
+  }
+  public login(){
+    if (this.username == '' || this.password == '' || this.college_code == '') {
+      alert('Enter valid Details')
+    } else {
+      console.log(this.username,this.password,this.college_code);
+      let body={
+          username:this.username,
+          password:this.password,
+          college:this.college_code
+      }
+      this.http.post('assets/data.json',body).subscribe((res:any)=>{
+      })
+    }
   }
 }

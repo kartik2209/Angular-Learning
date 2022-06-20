@@ -1,6 +1,43 @@
+<!-- <div >
+    <input type="text" [(ngModel)]="username" placeholder="UserName">
+    <input type="text" [(ngModel)]="password" placeholder="Password">
+    <input type="number" [(ngModel)]="college_code" placeholder="College Code">
+    <button (click)="adddata()" class="btn btn-primary">Add</button>
+    <button (click)="update()">Update</button>
+</div> -->
+<div [formGroup]="form">
 <div>
-    <input type="text" [(ngModel)]="username" >
-    <input type="text" [(ngModel)]="lastname" >
-    <input type="number" [(ngModel)]="college_code" >
-    <button type="button" class="btn btn-primary" (click)="login()">Login</button>
+<input type="text" formControlName="collegename" placeholder="College Name"> 
+<div *ngIf="form.controls['collegename'].value=='' && submited" ><small >Enter valid First Name</small></div>
+</div><br>
+<div>
+<input type="text" formControlName="password" placeholder="Password">
+<div *ngIf="form.controls['password'].value=='' && submited" ><small >Enter valid First Name</small></div>
+</div><br>
+<div><input type="number" formControlName="college_code" placeholder="College Code"></div>
+<div *ngIf="form.controls['college_code'].value=='' && submited" ><small >Enter valid First Name</small></div>
+</div><br>
+<button (click)="adddata()" [disabled]="!form.valid">{{param.id? 'Update':'Add'}}</button>
+<button (click)="back()" *ngIf="param.id">X</button>
+<div>
+    <table class="table table-default">
+        <thead class="thead-dark">
+            <tr>
+                <th>College Name</th>
+                <th>Password</th>
+                <th>College Code</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of user;let i = index">
+                <td>{{data.collegename}}</td>
+                <td>{{data.password}}</td>
+                <td>{{data.college_code}}</td>
+                <td><img src="assets\Update.svg" (click)="update(data._id)" style="width: 20px;"></td>
+                <td><img src="assets\Delete.svg" (click)="delete(i)" style="width: 20px;"></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
