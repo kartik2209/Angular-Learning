@@ -15,7 +15,7 @@ import { CardincreaseComponent } from './cardincrease/cardincrease.component';
 
 const routes: Routes = [
   {
-path:'',redirectTo:'Cardincrease',pathMatch:'full'
+path:'',redirectTo:'Arrayinarray',pathMatch:'full'
 },
   {path:'Login',component:LoginComponent},
   {path:'Exam',component:ExamComponent},
