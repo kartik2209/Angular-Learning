@@ -15,11 +15,11 @@ param:any
  getapi='http://192.168.0.173:3900/school/get'
  postapi='http://192.168.0.173:3900/school/add'
  updateapi='http://192.168.0.173:3900/school/update'
-
+ deleteapi='http://192.168.0.173:3900/school/delete'
  submited:any
-  constructor(public http:HttpClient,public fb:FormBuilder,public router:Router,public qp:ActivatedRoute) { 
-this.createform()
-    
+  constructor(public http:HttpClient,public fb:FormBuilder,public router:Router,public qp:ActivatedRoute) 
+  { 
+        this.createform()
   }
   ngOnInit(): void {
     this.getschoollist()
@@ -39,7 +39,9 @@ if (this.form.invalid) {
   alert('Fill all the details')
   return
 } 
-else {
+else 
+{
+this.createform()
 console.log(this.form);
 if (this.param.id) 
 {
@@ -70,8 +72,14 @@ update(id:any){
   this.router.navigate(['/Post'],{queryParams:{id:id}
   })
 }
-delete(i:any){
-  console.log(this.form.value); 
+delete(id:any){
+  let body={
+    id:id
+  }
+  this.http.post(this.deleteapi, body).subscribe((del:any)=>{
+    console.log(del); 
+  })
+  this.getschoollist()
 }
 getschoolbyID(id:any){
   this.http.get(this.getapi + '/' + id).subscribe((res:any)=>{

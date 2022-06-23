@@ -14,15 +14,19 @@ export class CardincreaseComponent implements OnInit {
  username=''
  password=''
  college_code=''
-  constructor(public http:HttpClient) { }
-
+ searchText:any = ""
+  constructor(public http:HttpClient) { 
+  }
   ngOnInit(): void {
+   this.getdata()
+  }
+public getdata()
+{
   this.http.get('assets/data.json').subscribe((data)=>{
     console.log(data);
     this.Object = data
   })
- 
-  }
+}
   public login(){
     if (this.username == '' || this.password == '' || this.college_code == '') {
       alert('Enter valid Details')
@@ -37,4 +41,19 @@ export class CardincreaseComponent implements OnInit {
       })
     }
   }
+public filter(event:any)
+{
+  if (event.target.value !== "" && event.target.value !== null) {
+    this.Object.forEach((data:any) => {
+      if (data.username == this.searchText) {
+          this.Object = []
+          this.Object.push(data)
+      }
+   });
+   }
+   else
+   {
+    this.getdata()
+   }
+}
 }

@@ -42,7 +42,7 @@ import { SchoollistComponent } from './schoollist/schoollist.component';
     DesignComponent,
     ArrayinarrayComponent,
     CardincreaseComponent,
-    SchoollistComponent
+    SchoollistComponent,
   ],
   imports: [
     BrowserModule,

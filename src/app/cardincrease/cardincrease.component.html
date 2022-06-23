@@ -6,6 +6,7 @@
 <input type="text" [(ngModel)]="maxWFromRight"> maxWFromRight
 <input type="text" [(ngModel)]="maxHFromRight"> maxHFromRight<br> -->
 <div class="container mt-5">
+    <input type="text" [(ngModel)]="searchText" (input)="filter($event)">
     <h2>Posts</h2>
     <table class="table">
       <thead class="thead-dark">
@@ -20,11 +21,11 @@
           <th scope="row">{{ data.username }}</th>
           <td>{{ data.password }}</td>
           <td>{{ data.college_code }}</td>
-        </tr>
+          </tr>
       </tbody>
     </table>
 </div>
-<div class="card2">
+<!-- <div class="card2">
     <div class="adminlogin">
       <label><b><h4>ADMIN LOGIN</h4></b></label>
     </div>
@@ -40,4 +41,4 @@
     <div class="login">
         <button type="button" class="btn btn-primary" (click)="login()">Login</button>
     </div>
-</div>
+</div> -->

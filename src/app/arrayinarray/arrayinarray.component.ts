@@ -90,4 +90,36 @@ subtopicarray!:FormArray
   submit(){
     console.log(this.form.value);
   }
+save(i:any,chapterdata:any){
+if (this.validation(chapterdata)) {
+  alert('valid')
+}
+else
+{
+  alert(`Please fill all the values`)
+}
+}
+
+ validation(chapterdata:any){
+let valid:any  = Boolean
+let chapter  = chapterdata.get('chapter')?.value
+this.topicarray = chapterdata.get('topicarray') as FormArray
+for (let j = 0; j < this.topicarray.length; j++) {
+let topic  = this.topicarray.at(j).get('topic')?.value
+this.subtopicarray = this.topicarray.at(j).get('subtopicarray') as FormArray
+for (let k = 0; k < this.subtopicarray.length; k++) {
+let subtopic = this.subtopicarray.at(j).get('subtopic')?.value
+ if (chapter !== "" || topic !== "" || subtopic !== "") {
+  valid  = true
+ }
+ else
+ {
+ return valid = false
+ }
+} 
+}
+return valid
+  }
+
+
  }
