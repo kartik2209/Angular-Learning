@@ -12,6 +12,7 @@ import { StreamComponent } from './stream/stream.component';
 import { DesignComponent } from './design/design.component';
 import { ArrayinarrayComponent } from './arrayinarray/arrayinarray.component';
 import { CardincreaseComponent } from './cardincrease/cardincrease.component';
+import { SchoollistComponent } from './schoollist/schoollist.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ path:'',redirectTo:'Arrayinarray',pathMatch:'full'
   {path:'Design',component: DesignComponent},
   {path:'Arrayinarray',component: ArrayinarrayComponent},
   {path:'Cardincrease',component: CardincreaseComponent},
+  {path:'Schoollist',component: SchoollistComponent},
 
 
 ];

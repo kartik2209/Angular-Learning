@@ -39,7 +39,7 @@ subtopicarray!:FormArray
     console.log(this.form);
     this.chapterarray.removeAt(i)
   }
-   //   Topic Array 
+   //   Topic Array
   topicform():FormGroup{
     return this.fb.group({
       topic:new FormControl('',Validators.required),
@@ -93,6 +93,8 @@ subtopicarray!:FormArray
 save(i:any,chapterdata:any){
 if (this.validation(chapterdata)) {
   alert('valid')
+  console.log(this.form.value);
+  
 }
 else
 {

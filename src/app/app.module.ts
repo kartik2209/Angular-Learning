@@ -11,6 +11,9 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 import { FooterComponent } from './footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExamComponent } from './exam/exam.component';
@@ -25,6 +28,8 @@ import { DesignComponent } from './design/design.component';
 import { ArrayinarrayComponent } from './arrayinarray/arrayinarray.component';
 import { CardincreaseComponent } from './cardincrease/cardincrease.component';
 import { SchoollistComponent } from './schoollist/schoollist.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material/form-field';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +59,12 @@ import { SchoollistComponent } from './schoollist/schoollist.component';
     MatCardModule,
     MatSidenavModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatStepperModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
