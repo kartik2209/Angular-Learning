@@ -1,29 +1,33 @@
 <div [formGroup]="form">
-<div style="display: flex;margin-left:50px;">
-<button (click)="chapteradd()" class="addbtn ">+ Add Chapter</button><br>    
-<button (click)="submit()" class="submitbtn">Submit</button>
-</div>
-<div formArrayName="chapterarray" class="main" *ngFor="let chapterdata of chapterformcontrol();let i = index;">
-<div [formGroupName]="i">
-<input type="text" formControlName="chapter" class="card-chapter" placeholder="Chapter">
-<button (click)="chapterremove(i)" class="remo">Remove</button>
-<div formArrayName="topicarray" *ngFor="let topicdata of topicformcontrol(i);let j = index;let first = first">
-<div [formGroupName]="j">
-<input type="text" formControlName="topic" class="card-topic" placeholder="Topic">
-<button (click)="topicadd(i)" *ngIf="first" class="addbtn ">+ Add Topic</button>     
-<button (click)="topicremove(i,j)" class="remo">Remove</button>
-<div formArrayName="subtopicarray" *ngFor="let subtopicdata of subtopicformcontrol(i,j);let k = index;let first = first">
-<div [formGroupName]="k">
-<input type="text" formControlName="subtopic" class="card-subtopic" placeholder="Sub Topic">
-<button (click)="subtopicadd(i,j)" *ngIf="first"  class="addbtn ">+ Add Sub Topic</button>
-<button (click)="subtopicremove(i,j,k)" class="remo" >Remove</button>
-<div style="display: flex; justify-content: end;">
-<button (click)="save(i,chapterdata)" class="submitbtn" >Submit</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div style="display: flex;margin-left:50px;">
+        <button (click)="chapteradd(template)" class="addbtn ">+ Add Chapter</button><br>
+        <button (click)="submit()" class="submitbtn">Submit</button>
+    </div>
+    <ng-template #template let-model>
+    <div formArrayName="chapterarray" class="main" *ngFor="let chapterdata of chapterformcontrol();let i = index;">
+        <div [formGroupName]="i">
+            <input type="text" formControlName="chapter" class="card-chapter" placeholder="Chapter">
+            <button (click)="chapterremove(i)" class="remo">Remove</button>
+            <div formArrayName="topicarray"
+                *ngFor="let topicdata of topicformcontrol(i);let j = index;let first = first">
+                <div [formGroupName]="j">
+                    <input type="text" formControlName="topic" class="card-topic" placeholder="Topic">
+                    <button (click)="topicadd(i)" *ngIf="first" class="addbtn ">+ Add Topic</button>
+                    <button (click)="topicremove(i,j)" class="remo">Remove</button>
+                    <div formArrayName="subtopicarray"
+                        *ngFor="let subtopicdata of subtopicformcontrol(i,j);let k = index;let first = first">
+                        <div [formGroupName]="k">
+                            <input type="text" formControlName="subtopic" class="card-subtopic" placeholder="Sub Topic">
+                            <button (click)="subtopicadd(i,j)" *ngIf="first" class="addbtn ">+ Add Sub Topic</button>
+                            <button (click)="subtopicremove(i,j,k)" class="remo">Remove</button>
+                            <div style="display: flex; justify-content: end;">
+                                <button (click)="save(i,chapterdata)" class="submitbtn">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </ng-template>
 </div>

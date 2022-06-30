@@ -30,6 +30,8 @@ import { CardincreaseComponent } from './cardincrease/cardincrease.component';
 import { SchoollistComponent } from './schoollist/schoollist.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +66,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatIconModule,
     MatButtonModule,
     MatStepperModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
